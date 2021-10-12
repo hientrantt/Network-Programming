@@ -31,7 +31,7 @@ struct hostent* getInfoByNameOrIP(int mode, char* arg){
         addrIP.s_addr = inet_addr(arg);
         
         if(addrIP.s_addr!=-1){
-            host = gethostbyaddr(&addrIP, strlen(arg), AF_INET);
+            host = gethostbyaddr(&addrIP, 4, AF_INET);
         }
     }else{
         host=NULL;
